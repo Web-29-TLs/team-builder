@@ -7,14 +7,14 @@ function Form(props) {
         setInput({...input, [event.target.name]: event.target.value})
     }
 
-    const handleSubmit = event => {
+    const handleSubmit = (event) => {
         event.preventDefault()
         props.addMember(input)
         setInput({name:'', email: '', role: '', location: ''})
     }
 
     return (
-        <form onSubmit={() => handleSubmit()}>
+        <form onSubmit={(event) => handleSubmit(event)}>
             <label>Name:
                 <input type='text' name='name' value={input.name} onChange={(event) => handleChange(event)} ></input>
             </label>
