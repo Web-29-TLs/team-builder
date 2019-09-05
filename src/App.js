@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import {Route} from 'react-router-dom';
+import Home from './components/Home';
 import Form from './components/Form';
 import MembersList from './components/MembersList';
 
@@ -15,8 +17,10 @@ function App() {
 
   return (
     <div className="App">
-      <MembersList members={members} />
-      <Form addMember={addMember} />
+    <Route path={`/`} component={Home} />
+    <Route path={`/members`}  render={props => <MembersList {...props} members={members} />} />
+    <Route path={`/add-member`} render={props => <Form {...props} addMember={addMember} />} />
+      
     </div>
   );
 }

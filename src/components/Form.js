@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 function Form(props) {
     const [input, setInput] = useState({name:'', email: '', role: '', location: ''})
@@ -14,6 +15,7 @@ function Form(props) {
     }
 
     return (
+        <div>
         <form onSubmit={(event) => handleSubmit(event)}>
         <h2>Add a Member</h2>
             <label>Name:
@@ -30,6 +32,10 @@ function Form(props) {
             </label>
             <button type='submit' >Submit</button>
         </form>
+        <Link to={`/`}>
+            <button>Home</button>
+        </Link>
+        </div>
     )
 }
 export default Form;
