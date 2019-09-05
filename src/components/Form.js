@@ -15,6 +15,7 @@ function Form(props) {
 
     return (
         <form onSubmit={(event) => handleSubmit(event)}>
+        <h2>Add a Member</h2>
             <label>Name:
                 <input type='text' name='name' value={input.name} onChange={(event) => handleChange(event)} ></input>
             </label>

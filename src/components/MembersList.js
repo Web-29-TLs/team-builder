@@ -4,11 +4,10 @@ import MemberCard from './MemberCard';
 function MembersList(props) {
     console.log(props.members)
     return(
-        props.members.map((item) => {
-            console.log(item)
+        props.members.map((item, index) => {
 
             return(
-                <MemberCard member={item} />
+                <MemberCard key={index} member={item} />
             )
         })
     )
