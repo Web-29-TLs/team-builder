@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 const CardDiv = styled.div `
     display: flex;
@@ -17,7 +18,7 @@ const Span = styled.span `
 `
 
 function MemberCard(props) {
-   console.log(props.member)
+//    console.log(props)
     const { name, email, role, location } = props.member
     return(
         <CardDiv>
@@ -26,7 +27,9 @@ function MemberCard(props) {
             <div><Span>Email: </Span>{email}</div>
             <div><Span>Role: </Span>{role}</div>
             <div><Span>Location: </Span>{location}</div>
-
+            <Link to={`/add-member`}>
+                <button onClick={() => props.editMember(props.member)}>Edit</button>
+            </Link>
         </CardDiv>
     )
 }
