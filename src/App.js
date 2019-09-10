@@ -9,13 +9,17 @@ import './App.css';
 
 function App() {
   const [members, setMembers] = useState([{name: 'Chris', email: 'cladams0203@gmail.com', role: 'student', location: 'sarasota'}])
-  const [memberToEdit, editMember] = useState({name:'', email: '', role: '', location: ''});
+  const [memberToEdit, setMemberToEdit] = useState({name:'', email: '', role: '', location: ''});
 
- 
-
+  console.log(memberToEdit)
   const addMember = (newMember) => {
 
     setMembers([...members, newMember])
+  }
+
+  const editMember = (info, id) => {
+    setMemberToEdit(info);
+    console.log(id)
   }
 
   return (

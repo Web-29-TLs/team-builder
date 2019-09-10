@@ -13,13 +13,13 @@ const CardContainer = styled.div `
 `
 
 function MembersList(props) {
-    
+
     return(
         <CardContainer>
         {props.members.map((item, index) => {
 
             return(
-                <MemberCard key={index} member={item} editMember={props.editMember} />
+                <MemberCard key={index} member={item} editMember={props.editMember} id={Date.now()} />
             )
         })}
         <Link to={`/`}>

@@ -18,7 +18,7 @@ const Span = styled.span `
 `
 
 function MemberCard(props) {
-//    console.log(props)
+   console.log(props)
     const { name, email, role, location } = props.member
     return(
         <CardDiv>
@@ -28,7 +28,7 @@ function MemberCard(props) {
             <div><Span>Role: </Span>{role}</div>
             <div><Span>Location: </Span>{location}</div>
             <Link to={`/add-member`}>
-                <button onClick={() => props.editMember(props.member)}>Edit</button>
+                <button onClick={() => props.editMember(props.member, props.id)}>Edit</button>
             </Link>
         </CardDiv>
     )

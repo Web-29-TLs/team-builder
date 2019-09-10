@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
+
 function Form(props) {
     const [input, setInput] = useState({name:'', email: '', role: '', location: ''})
-    console.log(props)
+    
     useEffect(() => {
         setInput(props.memberToEdit);
     }, [props.memberToEdit])
